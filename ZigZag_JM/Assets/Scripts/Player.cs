@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Vector3 PlayerDirection;
     public float PlayerSpeed;
+    public GroundSpawner groundSpawner;
 
     private void Start()
     {
@@ -38,5 +39,13 @@ public class Player : MonoBehaviour
         {
             PlayerDirection = Vector3.left;
         }   
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            groundSpawner.RandomGround2();
+        }
     }
 }

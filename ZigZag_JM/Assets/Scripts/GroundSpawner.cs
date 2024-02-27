@@ -20,6 +20,14 @@ public class GroundSpawner : MonoBehaviour
         }   
     }
 
+    public void RandomGround2()
+    {
+        for(int i = 0; i < 1; i++)
+        {
+            newGround();
+        }   
+    }
+
     private void newGround()
     {
         groundDirection = Random.Range(0, 2);
