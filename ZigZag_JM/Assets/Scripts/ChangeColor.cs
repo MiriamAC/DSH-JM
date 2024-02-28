@@ -24,13 +24,13 @@ public class ChangeColor : MonoBehaviour
 
 		switch(index){
 			case 0:
-				groundMaterial.color = new Color(0f, 1f, 1f); break;
+				groundMaterial.color = new Color(0f, 0.7105088f, 1f); break;
 			case 1:
-				groundMaterial.color = new Color(1f, 0.9847543f, 0f); break;
+				groundMaterial.color = new Color(1f, 0.7730654f, 0.08018869f); break;
 			case 2:
 				groundMaterial.color = new Color(0.4852338f, 0f, 1f); break;
 			case 3:
-				groundMaterial.color = new Color(0.2595912f, 0.990566f, 0.2289516f); break;
+				groundMaterial.color = new Color(0.04925805f, 0.6415094f, 0f); break;
 			case 4:
 				groundMaterial.color = new Color(0f, 0f, 0f); break;
 		}
