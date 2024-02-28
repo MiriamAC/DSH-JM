@@ -12,14 +12,22 @@ public class Player : MonoBehaviour
     public GroundSpawner groundSpawner;
 
     public float score;
+
     public TextMeshProUGUI scoreText;
 
     public GameObject RestartMenu;
 
+    private bool speedIncreased = false;
+
+    public TextMeshProUGUI speedIncreasedText;
+
     private void Start()
     {
         PlayerDirection = Vector3.left;
+
         RestartMenu.SetActive(false);
+
+        speedIncreasedText.enabled = false;
     }   
 
     private void Update()
@@ -28,6 +36,18 @@ public class Player : MonoBehaviour
         transform.position += getPlayerDirection() * PlayerSpeed * Time.deltaTime;   
 
         scoreText.text = "" + score;
+
+        if(score == 18){
+            StartCoroutine(ShowSpeedIncreasedText());
+        }
+        
+        if (score == 20 && !speedIncreased)
+        {
+            PlayerSpeed += 1.8f;
+            speedIncreased = true; 
+            
+        }
+        
     }
 
     public Vector3 getPlayerDirection() { return PlayerDirection; }
@@ -80,4 +100,14 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
+
+    IEnumerator ShowSpeedIncreasedText()
+    {
+        speedIncreasedText.enabled = true; 
+
+        yield return new WaitForSeconds(1.0f); 
+
+        speedIncreasedText.enabled = false;; 
+    }
+
 }
