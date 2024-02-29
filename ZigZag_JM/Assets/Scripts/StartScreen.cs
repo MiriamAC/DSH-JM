@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class StartScreen : MonoBehaviour
 {
-
     public Button btn;
     public Image img;
+    public TextMeshProUGUI txt;
 
     public Sprite[] images;
 
@@ -34,9 +34,8 @@ public class StartScreen : MonoBehaviour
     void FixedUpdate(){
         if (contar){
             switch(mostrar){
-                case 0: Debug.Log(""); break;
-                case 1: img.sprite = images[0];
-                        CargarLevel1(); break;
+                case 0: CargarLevel1(); Debug.Log(""); break;
+                case 1: img.sprite = images[0]; break;
                 case 2: img.sprite = images[1]; break;
                 case 3: img.sprite = images[2]; break;
             }
@@ -55,6 +54,7 @@ public class StartScreen : MonoBehaviour
 
         img.gameObject.SetActive(true);
         btn.gameObject.SetActive(false);
+        txt.gameObject.SetActive(false);
         contar = true;
     }
 
