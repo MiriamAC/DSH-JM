@@ -31,8 +31,7 @@ public class ChangeColor : MonoBehaviour
 				groundMaterial.color = new Color(0.4852338f, 0f, 1f); break;
 			case 3:
 				groundMaterial.color = new Color(0.04925805f, 0.6415094f, 0f); break;
-			case 4:
-				groundMaterial.color = new Color(0f, 0f, 0f); break;
+			
 		}
 
 	}

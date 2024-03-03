@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class GroundSpawner : MonoBehaviour
 {
-    public GameObject lastGround, groundPrefab, newGroundObject;
+    public GameObject lastGround, groundPrefab, newGroundObject, starPrefab;
     private int groundDirection;
+    public float starSpawnProbability;
+
 
     private void Start()
     {
@@ -17,14 +19,18 @@ public class GroundSpawner : MonoBehaviour
         for(int i = 0; i < 90; i++)
         {
             newGround();
+            
         }   
     }
 
+
+ 
     public void RandomGround2()
     {
         for(int i = 0; i < 1; i++)
         {
-            newGround();
+
+            newGround(); 
         }   
     }
 
@@ -40,6 +46,13 @@ public class GroundSpawner : MonoBehaviour
         {
             newGroundObject = Instantiate(groundPrefab, new Vector3(lastGround.transform.position.x, lastGround.transform.position.y, lastGround.transform.position.z + 1f), Quaternion.identity);
             lastGround = newGroundObject;
+           
+        }
+
+        if(Random.value < starSpawnProbability)
+        {
+             Instantiate(starPrefab, new Vector3(lastGround.transform.position.x, lastGround.transform.position.y + 1.5f, lastGround.transform.position.z), Quaternion.identity);
         }
     }
+
 }

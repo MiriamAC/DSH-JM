@@ -37,11 +37,11 @@ public class Player : MonoBehaviour
 
         scoreText.text = "" + score;
 
-        if(score == 18){
+        if(score == 48){
             StartCoroutine(ShowSpeedIncreasedText());
         }
         
-        if (score == 20 && !speedIncreased)
+        if (score == 50 && !speedIncreased)
         {
             PlayerSpeed += 1.8f;
             speedIncreased = true; 
@@ -89,6 +89,9 @@ public class Player : MonoBehaviour
             Time.timeScale = 0f;
             RestartMenu.SetActive(true);
 
+        }
+        else if(other.gameObject.tag == "Star"){
+             other.gameObject.SetActive(false);
         }
 
     }
