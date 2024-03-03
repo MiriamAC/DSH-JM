@@ -19,7 +19,6 @@ public class GroundSpawner : MonoBehaviour
         for(int i = 0; i < 90; i++)
         {
             newGround();
-            
         }   
     }
 
@@ -29,7 +28,6 @@ public class GroundSpawner : MonoBehaviour
     {
         for(int i = 0; i < 1; i++)
         {
-
             newGround(); 
         }   
     }
@@ -49,10 +47,9 @@ public class GroundSpawner : MonoBehaviour
            
         }
 
-        if(Random.value < starSpawnProbability)
+        if(Random.Range(0f, 1f) < starSpawnProbability)
         {
              Instantiate(starPrefab, new Vector3(lastGround.transform.position.x, lastGround.transform.position.y + 1.5f, lastGround.transform.position.z), Quaternion.identity);
         }
     }
-
 }

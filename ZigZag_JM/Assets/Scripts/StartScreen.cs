@@ -16,19 +16,11 @@ public class StartScreen : MonoBehaviour
     private int mostrar;
     private bool contar;
 
-    // Start is called before the first frame update
     void Start()
     {
         btn.onClick.AddListener(pulsado);
         contar = false;
-        mostrar = 3;
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mostrar = 3;  
     }
 
     void FixedUpdate(){

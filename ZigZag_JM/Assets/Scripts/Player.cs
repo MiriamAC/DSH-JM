@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
 
     public TextMeshProUGUI speedIncreasedText;
 
+    public AudioSource source;
+
+    public AudioClip starSound;
+    
     private void Start()
     {
         PlayerDirection = Vector3.left;
@@ -92,6 +96,7 @@ public class Player : MonoBehaviour
         }
         else if(other.gameObject.tag == "Star"){
              other.gameObject.SetActive(false);
+             source.PlayOneShot(starSound);
         }
 
     }
